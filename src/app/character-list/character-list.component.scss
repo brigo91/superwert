@@ -1,0 +1,49 @@
+character-list {
+	font-family: Arial, sans-serif;
+	padding: 20px;
+}
+
+.loading {
+	font-weight: bold;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+.character-item {
+	display: flex;
+	align-items: center;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.character-details {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center; 
+}
+
+.character-name {
+	margin-top: 0;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.character-image {
+	margin-left: 20px;
+}
+
+.pagination {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.page-number {
+	font-style: italic;
+}

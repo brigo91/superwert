@@ -1,10 +1,17 @@
-<div *ngIf="loading">Loading...</div>
-<div *ngIf="error">Error: {{ error }}</div>
-<ul *ngIf="!loading && !error">
-  <li *ngFor="let character of characters">
-    {{ character.name }}
-  </li>
-</ul>
-<button (click)="nextPage()">Next Page</button>
-<p>Current Page: {{currentPage}}</p>
-<button (click)="previousPage()">Previous Page</button>
+<div class="character-list">
+	<div *ngIf="loading" class="loading">Loading...</div>
+	<div *ngIf="error" class="error">{{ error }}</div>
+	<ul *ngIf="characters.length > 0">
+		<li *ngFor="let character of characters" class="character-item" (click)="openModal(character)">
+			<div class="character-details">
+				<h3 class="character-name">{{ character.name }}</h3>
+				<img class="character-image" [src]="character.image" alt="Character Image">
+			</div>
+		</li>
+	</ul>
+	<div class="pagination">
+		<button (click)="previousPage()" [disabled]="currentPage === 1">Previous Page</button>
+			<span class="page-number">Page {{ currentPage }} of {{ maxPage }}</span>
+		<button (click)="nextPage()" [disabled]="currentPage === maxPage">Next Page</button>
+	</div>
+</div>

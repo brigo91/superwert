@@ -52,4 +52,8 @@ export class CharacterListComponent {
       this.fetchCharacters(this.currentPage);
     }
   }
+
+  openModal(character: any){
+
+  }
 }
